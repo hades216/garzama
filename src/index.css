@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Hanken Grotesk", sans-serif;
+  --font-display: "Playfair Display", "Georgia", serif;
+  
+  --color-brand-charcoal: #FAF9F6;
+  --color-brand-slate: #1A1A1A;
+  --color-brand-crimson: #F27D26;
+  --color-brand-surface-bright: #E9E6E0;
+  --color-brand-sand: #F2EFE9;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-brand-charcoal);
+    color: var(--color-brand-slate);
+    font-family: var(--font-sans);
+  }
+}
+
+/* Animations and Utilities */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Premium micro-interactions and smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom selection styling */
+::selection {
+  background-color: var(--color-brand-crimson);
+  color: #ffffff;
+}
